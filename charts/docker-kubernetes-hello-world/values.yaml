@@ -2,8 +2,8 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 replicaCount: 1
-  image: bakeryharborrepo/helloworld-spring-boot
-  repository: 
+image:
+  repository: harbor.infrastructure.volvo.care/bakeryharborrepo/helloworld-spring-boot
   tag: latest
   pullPolicy: IfNotPresent
 service:
