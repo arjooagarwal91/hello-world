@@ -42,18 +42,18 @@ pipeline {
     //     imageVulnerabilitiesScan(fullImageName: "${env.REPO_URI}:${env.DOCKER_IMAGE_TAG}")
     //   }
     // }
-    // stage('DeployToDev') {
-    //   when {
-    //     branch 'master'
-    //   }
-    //   steps {
-    //     createSpinnakerArtifacts(
-    //       chartPath: env.CHART_PATH,
-    //       overrideValuesPath: "${env.CHART_PATH}/overrides-development.yaml", // This argument could be ommited
-    //       propertiesFileName: "build.properties", // This argument could be ommited
-    //       imageTag: env.DOCKER_IMAGE_TAG
-    //     )
-    //   }
-    // }
+    stage('DeployToDev') {
+      when {
+        branch 'master'
+      }
+      steps {
+        createSpinnakerArtifacts(
+          chartPath: env.CHART_PATH,
+          overrideValuesPath: "${env.CHART_PATH}/overrides-development.yaml", // This argument could be ommited
+          propertiesFileName: "build.properties", // This argument could be ommited
+          imageTag: env.DOCKER_IMAGE_TAG
+        )
+      }
+    }
   }
 }
