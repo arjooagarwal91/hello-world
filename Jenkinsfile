@@ -24,7 +24,7 @@ pipeline {
         }
       }
     }
-    stage("Artifact"){
+/*     stage("Artifact"){
      when {
        branch 'main'
       }
@@ -36,7 +36,7 @@ pipeline {
           registryURL: env.DOCKER_REGISTRY_URL
         )
       }
-    }
+    } */
     // stage('Scan images') {
     //   steps {
     //     imageVulnerabilitiesScan(fullImageName: "${env.REPO_URI}:${env.DOCKER_IMAGE_TAG}")
