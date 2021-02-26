@@ -26,7 +26,7 @@ pipeline {
     }
     stage("Artifact"){
      when {
-       branch 'master'
+       branch 'main'
       }
       steps {
         publishDockerImage(
@@ -44,7 +44,7 @@ pipeline {
     // }
     stage('DeployToDev') {
       when {
-        branch 'master'
+        branch 'main'
       }
       steps {
         createSpinnakerArtifacts(
